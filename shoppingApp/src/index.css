@@ -12,6 +12,9 @@
   .lightmode {
     @apply bg-white text-black;
   }
+  .darkmode {
+    @apply dark:bg-slate-800 dark:text-slate-200;
+  }
 }
 
 :root {

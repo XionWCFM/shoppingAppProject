@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Gift from '../../icons/Gift';
-import ModalStar from '../../icons/ModalStar';
+import DropdownStar from '../../icons/DropdownStar';
 
 const Dropdown = () => {
   return (
@@ -21,8 +21,11 @@ const Dropdown = () => {
               </Link>
             </li>
             <li className="flex items-center  py-3 pl-5">
-              <Link to="/bookmark" className="lightmode flex">
-                <ModalStar />
+              <Link
+                to="/bookmark"
+                className="lightmode flex items-center text-center"
+              >
+                <DropdownStar />
                 <span className=" pl-1">북마크 페이지</span>
               </Link>
             </li>

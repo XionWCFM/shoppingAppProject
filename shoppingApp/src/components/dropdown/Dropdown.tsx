@@ -15,7 +15,7 @@ const Dropdown = () => {
               </Link>
             </li>
             <li className="flex border-b border-gray-200 py-3 pl-5">
-              <Link to="/" className="lightmode flex">
+              <Link to="/products/list" className="lightmode flex">
                 <Gift />
                 <span className=" pl-1">상품리스트 페이지</span>
               </Link>

@@ -7,7 +7,7 @@ const ExhibitionCard = ({ data }: CardProps) => {
   return (
     <figure className={`w-[${imageWidth}]`}>
       <ProductImage src={image_url} bookmark={bookmark} />
-      <div className="flex flex-col font-extrabold">
+      <div className="cardtext flex flex-col">
         <p>{title}</p>
         <p>{sub_title}</p>
       </div>

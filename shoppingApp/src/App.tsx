@@ -15,7 +15,6 @@ const App = () => {
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/products/list" element={<List />} />
       </Routes>
-
       <Footer />
     </BrowserRouter>
   );

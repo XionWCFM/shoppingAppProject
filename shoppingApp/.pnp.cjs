@@ -44,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier-plugin-tailwindcss", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:0.2.8"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:18.2.0"],\
+            ["react-icons", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.8.0"],\
             ["react-redux", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:8.0.5"],\
             ["react-router-dom", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.11.1"],\
             ["tailwindcss", "npm:3.3.2"],\
@@ -3193,6 +3194,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-icons", [\
+        ["npm:4.8.0", {\
+          "packageLocation": "./.yarn/cache/react-icons-npm-4.8.0-aa5423cd6c-4dbba7ad98.zip/node_modules/react-icons/",\
+          "packageDependencies": [\
+            ["react-icons", "npm:4.8.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-icons-virtual-2048db9597/0/cache/react-icons-npm-4.8.0-aa5423cd6c-4dbba7ad98.zip/node_modules/react-icons/",\
+          "packageDependencies": [\
+            ["react-icons", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.8.0"],\
+            ["@types/react", "npm:18.2.6"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-is", [\
         ["npm:16.13.1", {\
           "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-f7a19ac349.zip/node_modules/react-is/",\
@@ -3538,6 +3561,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier-plugin-tailwindcss", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:0.2.8"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:18.2.0"],\
+            ["react-icons", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.8.0"],\
             ["react-redux", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:8.0.5"],\
             ["react-router-dom", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.11.1"],\
             ["tailwindcss", "npm:3.3.2"],\

@@ -8,7 +8,7 @@ const CategoryCard = ({ data }: CardProps) => {
   return (
     <figure className={`w-[${imageWidth}]`}>
       <ProductImage src={image_url} bookmark={bookmark} />
-      <div className="flex font-extrabold">
+      <div className="cardtext flex">
         <p># {title}</p>
       </div>
     </figure>

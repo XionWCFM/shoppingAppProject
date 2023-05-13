@@ -9,7 +9,7 @@ const BrandCard = ({ data }: CardProps) => {
   return (
     <figure className={`w-[${imageWidth}]`}>
       <ProductImage src={brand_image_url} bookmark={bookmark} />
-      <div className=" font-extrabold">
+      <div className="cardtext">
         <div className=" flex items-center justify-between">
           <span>{brand_name}</span>
           <span>관심고객수</span>

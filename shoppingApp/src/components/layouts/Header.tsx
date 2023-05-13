@@ -4,6 +4,7 @@ import useDropdown from '../../hooks/useDropdown';
 import Hamburger from '../../icons/Hamburger';
 import Logo from '../../icons/Logo';
 import Dropdown from '../dropdown/Dropdown';
+import DarkToggleButton from '../DarkToggleButton';
 const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { isOpen, setIsOpen } = useDropdown<HTMLDivElement>({
@@ -24,11 +25,17 @@ const Header = () => {
             <span className=" ml-3 text-2xl">COZ Shopping</span>
           </div>
         </Link>
-        <div className="relative" ref={dropdownRef}>
-          <button className="focus:outline-none" onClick={handleHamburgerClick}>
-            <Hamburger />
-          </button>
-          {isOpen && <Dropdown />}
+        <div className="fcc">
+          <DarkToggleButton />
+          <div className="relative ml-10" ref={dropdownRef}>
+            <button
+              className="focus:outline-none"
+              onClick={handleHamburgerClick}
+            >
+              <Hamburger />
+            </button>
+            {isOpen && <Dropdown />}
+          </div>
         </div>
       </div>
     </header>

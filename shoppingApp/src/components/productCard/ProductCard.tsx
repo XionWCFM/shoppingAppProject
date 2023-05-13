@@ -4,9 +4,9 @@ import CardProps from '../../types/CardProps';
 const ProductCard = ({ data }: CardProps) => {
   const { title, price, discountPercentage, image_url, bookmark } = data;
   return (
-    <figure className={`w-[${imageWidth}]`}>
+    <figure className={`w-[${imageWidth}] `}>
       <ProductImage src={image_url} bookmark={bookmark} />
-      <div className=" font-extrabold">
+      <div className=" cardtext ">
         <div className=" flex items-center justify-between">
           <span className=" flex-shrink-0 overflow-hidden text-ellipsis">
             {title}

@@ -8,26 +8,21 @@ interface ProductImageProps {
 
 const ProductImage = ({ src, bookmark }: ProductImageProps) => {
   return (
-    <figure className="mb-3 flex">
+    <div className={`h-[${imageHeight}] w-[${imageWidth}] relative mb-3 flex`}>
       <div
-        className={`h-[${imageHeight}] w-[${imageWidth}] flex items-center justify-center rounded-xl bg-slate-300 dark:bg-slate-800`}
+        className={` flex  h-[210px] w-[264px] items-center justify-center rounded-xl  bg-slate-400 dark:bg-slate-500`}
       >
-        {src ? (
-          <img
-            src={src}
-            alt=""
-            className={`rounded-xl w-${imageWidth} h-[${imageHeight}] object-fill `}
-          />
-        ) : (
-          <div className=" h-[13.125rem] w-[16.5rem] animate-pulse rounded-xl bg-gray-300"></div>
-        )}
-        <BookMarkStar
-          className=" absolute bottom-0 right-0 m-3 cursor-pointer"
-          fill={bookmark ? starActiveColor : starNonActiveColor}
+        <img
+          src={src}
+          alt="상품이미지입니다."
+          className="max-h-[13.125rem] max-w-[16.5rem]  rounded-2xl object-contain object-center"
         />
-        {/* 로딩 로직 완성 후엔 조건문 안으로 넣을것 */}
       </div>
-    </figure>
+      <BookMarkStar
+        className=" absolute bottom-1 right-3 m-3 cursor-pointer"
+        fill={bookmark ? starActiveColor : starNonActiveColor}
+      />
+    </div>
   );
 };
 

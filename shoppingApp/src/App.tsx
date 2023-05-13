@@ -6,11 +6,8 @@ import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
 import ProductImage from './components/productCard/ProductImage';
 import List from './pages/products/List';
-import { useGetProductCountQuery } from './modules/cozShoppingAPI';
 
 const App = () => {
-  const { data, error, isLoading } = useGetProductCountQuery(4);
-  console.log(data);
   return (
     <BrowserRouter>
       <Header />

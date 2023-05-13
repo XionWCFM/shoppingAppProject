@@ -4,7 +4,7 @@ import CardProps from '../../types/CardProps';
 const ProductCard = ({ data }: CardProps) => {
   const { title, price, discountPercentage, image_url, bookmark } = data;
   return (
-    <figure className={`w-[${imageWidth}] `}>
+    <figure className={`max-w-[${imageWidth}] flex flex-col`}>
       <ProductImage src={image_url} bookmark={bookmark} />
       <div className=" cardtext ">
         <div className=" flex items-center justify-between">

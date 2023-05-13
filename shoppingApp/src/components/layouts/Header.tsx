@@ -5,6 +5,8 @@ import Hamburger from '../../icons/Hamburger';
 import Logo from '../../icons/Logo';
 import Dropdown from '../dropdown/Dropdown';
 import DarkToggleButton from '../DarkToggleButton';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../modules';
 const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { isOpen, setIsOpen } = useDropdown<HTMLDivElement>({
@@ -16,13 +18,17 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const darkState = useSelector((state: RootState) => state.dark.isDark);
+
   return (
     <header className="lightmode darkmode sticky top-0 shadow-md">
       <div className="flex items-center justify-between px-[4.875rem] py-[1rem] text-center">
         <Link to="/" className="text-lightfont">
           <div className="fcc">
             <Logo />
-            <span className=" ml-3 text-2xl">COZ Shopping</span>
+            <span className=" ml-3 text-2xl text-slate-800 dark:text-slate-200">
+              COZ Shopping
+            </span>
           </div>
         </Link>
         <div className="fcc">
@@ -32,7 +38,7 @@ const Header = () => {
               className="focus:outline-none"
               onClick={handleHamburgerClick}
             >
-              <Hamburger />
+              <Hamburger stroke={darkState ? 'white' : 'black'} />
             </button>
             {isOpen && <Dropdown />}
           </div>

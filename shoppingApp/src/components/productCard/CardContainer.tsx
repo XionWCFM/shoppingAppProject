@@ -22,7 +22,7 @@ const CardContainer = ({ children }: Props) => {
   if (isError) return <div>엄</div>;
 
   return (
-    <section className=" mb-[1.88rem] w-[70.5rem]">
+    <section className=" mb-[1.88rem] max-w-[70.5rem]">
       {children}
       <div className=" mt-3 grid grid-cols-1 md:grid-cols-2 md:gap-2 xl:grid-cols-4 xl:gap-3">
         {data.map((data: CozApiInterface) => {

@@ -5,7 +5,7 @@ import CardProps from '../../types/CardProps';
 const ExhibitionCard = ({ data }: CardProps) => {
   const { title, sub_title, image_url, bookmark } = data;
   return (
-    <figure className={`w-[${imageWidth}]`}>
+    <figure className={`flex flex-col max-w-[${imageWidth}]`}>
       <ProductImage src={image_url} bookmark={bookmark} />
       <div className="cardtext flex flex-col">
         <p>{title}</p>

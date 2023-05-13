@@ -7,7 +7,7 @@ const BrandCard = ({ data }: CardProps) => {
   if (brand_image_url === null) return <div>에러</div>;
 
   return (
-    <figure className={`w-[${imageWidth}]`}>
+    <figure className={`flex flex-col max-w-[${imageWidth}]`}>
       <ProductImage src={brand_image_url} bookmark={bookmark} />
       <div className="cardtext">
         <div className=" flex items-center justify-between">

@@ -1,4 +1,4 @@
-import { useGetProductCountQuery } from '../../modules/cozShoppingAPI';
+import { useGetProductQuery } from '../../modules/cozShoppingAPI';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import BrandCard from './BrandCard';
 import CategoryCard from './CategoryCard';
@@ -16,16 +16,17 @@ interface Props {
 }
 
 const CardContainer = ({ children }: Props) => {
-  const { data, isError, isLoading } = useGetProductCountQuery(4);
+  const { data, isError, isLoading } = useGetProductQuery(undefined);
 
   if (isLoading) return <div>엄wnstlr</div>;
   if (isError) return <div>엄</div>;
 
+  const onlyFourRenderData = data.slice(0, 4);
   return (
     <section className=" mb-[1.88rem] max-w-[70.5rem]">
       {children}
       <div className=" mt-3 grid grid-cols-1 md:grid-cols-2 md:gap-2 xl:grid-cols-4 xl:gap-3">
-        {data.map((data: CozApiInterface) => {
+        {onlyFourRenderData.map((data: CozApiInterface) => {
           switch (data.type) {
             case PRODUCT:
               return <ProductCard data={data} key={`card${data.id}`} />;

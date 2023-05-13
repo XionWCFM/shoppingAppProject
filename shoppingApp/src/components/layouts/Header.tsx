@@ -21,7 +21,7 @@ const Header = () => {
   const darkState = useSelector((state: RootState) => state.dark.isDark);
 
   return (
-    <header className="lightmode darkmode sticky top-0 shadow-md">
+    <header className="lightmode darkmode sticky top-0 z-30 shadow-md">
       <div className="flex items-center justify-between px-[4.875rem] py-[1rem] text-center">
         <Link to="/" className="text-lightfont">
           <div className="fcc">

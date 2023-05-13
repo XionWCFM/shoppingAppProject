@@ -4,7 +4,7 @@ import DropdownStar from '../../icons/DropdownStar';
 
 const Dropdown = () => {
   return (
-    <div className="absolute right-[-4rem] top-8 mt-2 max-h-[9.375rem] w-[12.5rem] rounded-md bg-white">
+    <div className="absolute right-[-4rem] top-8  mt-2 max-h-[9.375rem] w-[12.5rem] rounded-md bg-white">
       <div className=" flex ">
         <div className="absolute right-[4.125rem] top-[-10px] h-5 w-5 rotate-45 bg-white  "></div>
         <div className=" z-10 w-[12.5rem] rounded-lg shadow-md shadow-slate-300 ">

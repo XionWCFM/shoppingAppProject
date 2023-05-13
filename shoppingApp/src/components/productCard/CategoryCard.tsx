@@ -1,11 +1,15 @@
 import ProductImage from './ProductImage';
 import { imageWidth } from './ImageWH';
-const CategoryCard = () => {
+import CardProps from '../../types/CardProps';
+
+const CategoryCard = ({ data }: CardProps) => {
+  const { title, image_url, bookmark } = data;
+
   return (
     <figure className={`w-[${imageWidth}]`}>
-      <ProductImage />
+      <ProductImage src={image_url} bookmark={bookmark} />
       <div className="flex font-extrabold">
-        <p># {`카테고리이름`}</p>
+        <p># {title}</p>
       </div>
     </figure>
   );

@@ -1,22 +1,18 @@
-import BrandCard from '../../components/productCard/BrandCard';
-import { useGetProductCountQuery } from '../../modules/cozShoppingAPI';
-import CategoryCard from '../../components/productCard/CategoryCard';
-import ProductCard from '../../components/productCard/ProductCard';
-import ExhibitionCard from '../../components/productCard/ExhibitonCard';
+import MainContainer from '../../components/layouts/MainContainer';
+import CardContainer from '../../components/productCard/CardContainer';
 
 const Main = () => {
-  const { data, isLoading, isError } = useGetProductCountQuery(4);
-  console.log(data);
-  console.log(isLoading);
-  console.log(isError);
   return (
-    <div>
-      <div>메인페이지에요</div>
-      <BrandCard />
-      <CategoryCard />
-      <ProductCard />
-      <ExhibitionCard />
-    </div>
+    <MainContainer>
+      <>
+        <CardContainer>
+          <h2 className=" text-2xl font-bold">상품 리스트</h2>
+        </CardContainer>
+        <CardContainer>
+          <h2 className=" text-2xl font-bold">북마크 리스트</h2>
+        </CardContainer>
+      </>
+    </MainContainer>
   );
 };
 

@@ -4,7 +4,6 @@ import Main from './pages/main/Main';
 import Bookmark from './pages/bookmark/Bookmark';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
-import ProductImage from './components/productCard/ProductImage';
 import List from './pages/products/List';
 
 const App = () => {
@@ -16,16 +15,6 @@ const App = () => {
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/products/list" element={<List />} />
       </Routes>
-      <main className=" px-[4.875rem]">
-        <div className=" h-96">dsa</div>
-        <div className=" h-96">dsa</div>
-        <div className=" h-96">dsa</div>
-        <div className=" h-96">dsa</div>
-        <div className=" h-96">dsa</div>
-        <div className=" h-96">dsa</div>
-        <div className=" h-96">dsa</div>
-      </main>
-      <ProductImage />
       <Footer />
     </BrowserRouter>
   );

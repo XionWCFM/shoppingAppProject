@@ -1,16 +1,21 @@
 import ProductImage from './ProductImage';
 import { imageWidth } from './ImageWH';
-const BrandCard = () => {
+import CardProps from '../../types/CardProps';
+
+const BrandCard = ({ data }: CardProps) => {
+  const { brand_name, brand_image_url, follower, bookmark } = data;
+  if (brand_image_url === null) return <div>에러</div>;
+
   return (
     <figure className={`w-[${imageWidth}]`}>
-      <ProductImage />
+      <ProductImage src={brand_image_url} bookmark={bookmark} />
       <div className=" font-extrabold">
         <div className=" flex items-center justify-between">
-          <span>브랜드이름</span>
-          <span>관심 고객수</span>
+          <span>{brand_name}</span>
+          <span>관심고객수</span>
         </div>
         <div className="flex flex-row-reverse">
-          <p className=" font-medium">카운터</p>
+          <p className=" font-medium">{follower}</p>
         </div>
       </div>
     </figure>

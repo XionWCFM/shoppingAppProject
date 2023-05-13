@@ -10,9 +10,7 @@ const Dropdown = () => {
         <div className=" z-10 w-[12.5rem] rounded-lg shadow-md shadow-slate-300 ">
           <ul className="flex flex-col justify-center">
             <li className="flex border-b border-gray-200 py-3 pl-5">
-              <Link to="/" className="lightmode">
-                OOO님, 안녕하세요!
-              </Link>
+              OOO님, 안녕하세요!
             </li>
             <li className="flex border-b border-gray-200 py-3 pl-5">
               <Link to="/products/list" className="lightmode flex">

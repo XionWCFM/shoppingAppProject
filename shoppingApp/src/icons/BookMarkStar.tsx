@@ -1,6 +1,5 @@
 import FillSvgProps from '../types/FillSvgProps';
 import { starNonActiveColor } from '../colors/colors';
-// import { starActiveColor } from '../colors/colors';
 // 리덕스 구현 후 조건부 렌더
 
 const BookMarkStar = ({

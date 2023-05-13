@@ -22,9 +22,9 @@ const Hamburger = ({
       <path
         d="M2 22H32M2 12H32M2 2H32"
         stroke={stroke}
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

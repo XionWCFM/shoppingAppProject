@@ -8,7 +8,7 @@ const BrandCard = ({ data }: CardProps) => {
 
   return (
     <figure className={`flex flex-col max-w-[${imageWidth}]`}>
-      <ProductImage src={brand_image_url} bookmark={bookmark} />
+      <ProductImage src={brand_image_url} bookmark={bookmark} data={data} />
       <div className="cardtext">
         <div className=" flex items-center justify-between">
           <span>{brand_name}</span>

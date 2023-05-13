@@ -1,15 +1,16 @@
+import useBookmark from '../../hooks/useBookmark';
 import { useGetProductQuery } from '../../modules/cozShoppingAPI';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import BrandCard from './BrandCard';
 import CategoryCard from './CategoryCard';
 import ExhibitionCard from './ExhibitonCard';
 import ProductCard from './ProductCard';
+import { ReactElement } from 'react';
 
 const PRODUCT = 'Product';
 const CATEGORY = 'Category';
 const EXHIBITION = 'Exhibition';
 const BRAND = 'Brand';
-import { ReactElement } from 'react';
 
 interface Props {
   children: ReactElement;
@@ -17,6 +18,7 @@ interface Props {
 
 const CardContainer = ({ children }: Props) => {
   const { data, isError, isLoading } = useGetProductQuery(undefined);
+  const bookMarkHandler = useBookmark();
 
   if (isLoading) return <div>엄wnstlr</div>;
   if (isError) return <div>엄</div>;

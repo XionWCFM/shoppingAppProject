@@ -1,11 +1,11 @@
-import SvgTagProps from '../types/svgTagProps';
+import SvgTagProps from '../types/SvgTagProps';
 
 const Logo = ({ width = 55, height = 30 }: SvgTagProps) => {
   return (
     <svg
       width={width}
       height={height}
-      viewBox={`"0 0 ${width} ${height}`}
+      viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"

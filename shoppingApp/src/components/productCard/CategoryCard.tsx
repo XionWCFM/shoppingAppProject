@@ -7,7 +7,7 @@ const CategoryCard = ({ data }: CardProps) => {
 
   return (
     <figure className={`max-w-[${imageWidth}] flex flex-col`}>
-      <ProductImage src={image_url} bookmark={bookmark} />
+      <ProductImage src={image_url} bookmark={bookmark} data={data} />
       <div className="cardtext flex">
         <p># {title}</p>
       </div>

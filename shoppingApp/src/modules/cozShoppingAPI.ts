@@ -40,7 +40,7 @@ export const cozShoppingAPI = createApi({
       'api'
     >,
   ) => ({
-    getProduct: builder.query<CozApiInterface, string>({
+    getProduct: builder.query({
       query: (count?: string | number) => ({
         url: count ? `/products?count=${count}` : `/products`,
       }),

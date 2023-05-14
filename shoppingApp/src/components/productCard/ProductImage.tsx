@@ -6,11 +6,10 @@ import useBookmark from '../../hooks/useBookmark';
 
 interface ProductImageProps {
   src?: string | undefined;
-  bookmark?: boolean;
   data: CozApiInterface;
 }
 
-const ProductImage = ({ src, bookmark, data }: ProductImageProps) => {
+const ProductImage = ({ src, data }: ProductImageProps) => {
   const bookMarkHandler = useBookmark();
 
   return (
@@ -30,7 +29,7 @@ const ProductImage = ({ src, bookmark, data }: ProductImageProps) => {
       >
         <BookMarkStar
           className=" "
-          fill={bookmark ? starActiveColor : starNonActiveColor}
+          fill={data.bookmark ? starActiveColor : starNonActiveColor}
         />
       </button>
     </div>

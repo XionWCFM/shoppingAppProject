@@ -20,6 +20,7 @@ const CardContainer = ({ children }: Props) => {
 
   if (isLoading) return <div>엄wnstlr</div>;
   if (isError) return <div>엄</div>;
+  if (!data) return <div>엄</div>;
 
   const onlyFourRenderData = data.slice(0, 4);
   return (

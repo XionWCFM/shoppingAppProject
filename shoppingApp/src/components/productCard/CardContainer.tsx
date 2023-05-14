@@ -1,10 +1,10 @@
-import { useGetProductQuery } from '../../modules/cozShoppingAPI';
+import { ReactElement } from 'react';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
+
 import BrandCard from './BrandCard';
 import CategoryCard from './CategoryCard';
 import ExhibitionCard from './ExhibitonCard';
 import ProductCard from './ProductCard';
-import { ReactElement } from 'react';
 
 const PRODUCT = 'Product';
 const CATEGORY = 'Category';
@@ -17,12 +17,6 @@ interface Props {
 }
 
 const CardContainer = ({ children, apiData }: Props) => {
-  const { data, isError, isLoading } = useGetProductQuery(undefined);
-
-  if (isLoading) return <div>엄wnstlr</div>;
-  if (isError) return <div>엄</div>;
-  if (!data) return <div>엄</div>;
-
   return (
     <section className=" mb-[1.88rem] max-w-[70.5rem]">
       {children}

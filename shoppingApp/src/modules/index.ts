@@ -1,18 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import darkSlice from './darkSlice';
-import { cozShoppingAPI, CozApiInterface } from './cozShoppingAPI';
+import { cozShoppingAPI } from './cozShoppingAPI';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { Middleware } from '@reduxjs/toolkit';
-
-const addBookmarkProperty: Middleware = () => (next) => (action) => {
-  if (action.type.endsWith('fulfilled')) {
-    action.payload = action.payload.map((data: CozApiInterface) => ({
-      ...data,
-      bookmark: false,
-    }));
-  }
-  return next(action);
-};
+import addBookmarkProperty from './middleware/addBookMarkProperty';
 
 const store = configureStore({
   reducer: {

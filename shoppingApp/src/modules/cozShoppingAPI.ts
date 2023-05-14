@@ -26,6 +26,7 @@ export const cozShoppingAPI = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `http://cozshopping.codestates-seb.link/api/v1/`,
   }),
+
   endpoints: (
     builder: EndpointBuilder<
       BaseQueryFn<
@@ -39,7 +40,7 @@ export const cozShoppingAPI = createApi({
       'api'
     >,
   ) => ({
-    getProduct: builder.query({
+    getProduct: builder.query<CozApiInterface, string>({
       query: (count?: string | number) => ({
         url: count ? `/products?count=${count}` : `/products`,
       }),

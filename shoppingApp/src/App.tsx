@@ -5,8 +5,10 @@ import Bookmark from './pages/bookmark/Bookmark';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
 import List from './pages/products/List';
+import { cozShoppingAPI } from './modules/cozShoppingAPI';
 
 const App = () => {
+  console.log(cozShoppingAPI);
   return (
     <BrowserRouter>
       <Header />

@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 import Spinner from '../../assets/Spinner.gif';
+
 import React from 'react';
 
 const Loading = () => {

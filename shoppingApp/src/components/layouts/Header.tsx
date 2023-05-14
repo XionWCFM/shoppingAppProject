@@ -1,6 +1,5 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useDropdown from '../../hooks/useDropdown';
 import Hamburger from '../../icons/Hamburger';
 import Logo from '../../icons/Logo';
 import Dropdown from '../dropdown/Dropdown';
@@ -8,15 +7,7 @@ import DarkToggleButton from '../DarkToggleButton';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../modules';
 const Header = () => {
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const { isOpen, setIsOpen } = useDropdown<HTMLDivElement>({
-    ref: dropdownRef,
-    initialState: false,
-  });
-
-  const handleHamburgerClick = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 
   const darkState = useSelector((state: RootState) => state.dark.isDark);
 
@@ -33,14 +24,14 @@ const Header = () => {
         </Link>
         <div className="fcc">
           <DarkToggleButton />
-          <div className="relative ml-10" ref={dropdownRef}>
+          <div className="relative ml-10">
             <button
               className="focus:outline-none"
-              onClick={handleHamburgerClick}
+              onClick={() => setIsDropDownOpen((state) => !state)}
             >
               <Hamburger stroke={darkState ? 'white' : 'black'} />
             </button>
-            {isOpen && <Dropdown />}
+            {isDropDownOpen && <Dropdown />}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { useGetProductQuery } from '../../modules/cozShoppingAPI';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
+import Loading from '../loading/Loading';
 import BrandCard from './BrandCard';
 import CategoryCard from './CategoryCard';
 import ExhibitionCard from './ExhibitonCard';
@@ -18,7 +19,7 @@ interface Props {
 const CardContainer = ({ children }: Props) => {
   const { data, isError, isLoading } = useGetProductQuery(undefined);
 
-  if (isLoading) return <div>엄wnstlr</div>;
+  if (isLoading) return <Loading />;
   if (isError) return <div>엄</div>;
   if (!data) return <div>엄</div>;
 

@@ -1,3 +1,3 @@
 import cozShopping from './cozShopping.png';
-
-export { cozShopping };
+import spinner from './spinner.gif';
+export { cozShopping, spinner };

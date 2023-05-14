@@ -13,9 +13,8 @@ const useBookmark = () => {
         console.log(index);
         if (index !== -1) {
           draft[index].bookmark = !draft[index].bookmark;
-          console.log('엄');
         } else {
-          console.log('엄준식');
+          console.log('일단 뭐라도 한다..');
         }
       }),
     );

@@ -13,6 +13,7 @@ const addBookmarkProperty: Middleware = () => (next) => (action) => {
   }
   return next(action);
 };
+
 const store = configureStore({
   reducer: {
     dark: darkSlice.reducer,

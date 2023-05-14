@@ -20,7 +20,10 @@ const ExhibitionCard = ({ data }: CardProps) => {
         />
       )}
       <ProductImage src={image_url} data={data} />
-      <div className="cardtext flex flex-col">
+      <div
+        onClick={() => setIsOpen((state) => !state)}
+        className="cardtext flex flex-col"
+      >
         <p>{title}</p>
         <p>{sub_title}</p>
       </div>

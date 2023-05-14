@@ -4,7 +4,7 @@ import Main from './pages/main/Main';
 import Bookmark from './pages/bookmark/Bookmark';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
-import List from './pages/products/List';
+import Products from './pages/products/Products';
 import { cozShoppingAPI } from './modules/cozShoppingAPI';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/bookmark" element={<Bookmark />} />
-        <Route path="/products/list" element={<List />} />
+        <Route path="/products/:filterlist" element={<Products />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

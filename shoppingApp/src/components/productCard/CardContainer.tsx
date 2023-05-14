@@ -1,15 +1,12 @@
 import { ReactElement } from 'react';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
-
 import BrandCard from './BrandCard';
 import CategoryCard from './CategoryCard';
 import ExhibitionCard from './ExhibitonCard';
 import ProductCard from './ProductCard';
+import { CardVariable } from '../../variable/CardVariable';
 
-const PRODUCT = 'Product';
-const CATEGORY = 'Category';
-const EXHIBITION = 'Exhibition';
-const BRAND = 'Brand';
+const { PRODUCT, CATEGORY, EXHIBITION, BRAND } = CardVariable;
 
 interface Props {
   children: ReactElement;

@@ -1,9 +1,7 @@
 import BookMarkStar from '../../icons/BookMarkStar';
 import { starNonActiveColor, starActiveColor } from '../../colors/colors';
-import { imageHeight, imageWidth } from './ImageWH';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import useBookmark from '../../hooks/useBookmark';
-// h-[${imageHeight}] w-[${imageWidth}]
 interface ProductImageProps {
   src?: string | undefined;
   data: CozApiInterface;

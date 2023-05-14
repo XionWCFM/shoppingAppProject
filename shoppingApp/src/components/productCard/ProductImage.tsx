@@ -3,7 +3,7 @@ import { starNonActiveColor, starActiveColor } from '../../colors/colors';
 import { imageHeight, imageWidth } from './ImageWH';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import useBookmark from '../../hooks/useBookmark';
-
+// h-[${imageHeight}] w-[${imageWidth}]
 interface ProductImageProps {
   src?: string | undefined;
   data: CozApiInterface;
@@ -13,14 +13,12 @@ const ProductImage = ({ src, data }: ProductImageProps) => {
   const bookMarkHandler = useBookmark();
 
   return (
-    <div className={`h-[${imageHeight}] w-[${imageWidth}] relative mb-3 flex`}>
-      <div
-        className={` flex  h-[210px] w-[264px] items-center justify-center rounded-2xl bg-stone-500`}
-      >
+    <div className={` relative mb-3 flex`}>
+      <div className={` rounded-2xl `}>
         <img
           src={src}
           alt="상품이미지입니다."
-          className=" relative max-h-[13.125rem] max-w-[16.5rem]  rounded-2xl object-fill"
+          className=" relative h-[210px] w-[264px]  rounded-2xl "
         ></img>
       </div>
       <button

@@ -12,7 +12,7 @@ const ModalImage = ({ data, src, title, setIsOpen }: ModalProps) => {
   const bookMarkHandler = useBookmark();
 
   return (
-    <figure className="fixed bottom-0 left-0 right-0 top-0 z-20 flex items-center justify-center">
+    <figure className="fixed bottom-0 left-0 right-0 top-0 z-20 flex items-center justify-center ">
       <div className={`relative h-[30rem] w-[46.5rem]`}>
         <button
           onClick={(event: React.MouseEvent) => {
@@ -24,7 +24,7 @@ const ModalImage = ({ data, src, title, setIsOpen }: ModalProps) => {
           <Delete />
         </button>
         <img
-          className={` rounded-3xl h-[${ModalImageHeight}] w-[${ModalImageWidth}]`}
+          className={`rounded-3xl shadow-md shadow-slate-400 h-[${ModalImageHeight}] w-[${ModalImageWidth}]`}
           src={src}
           width={ModalImageWidth}
           height={ModalImageHeight}

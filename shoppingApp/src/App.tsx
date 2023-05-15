@@ -6,12 +6,14 @@ import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
 import Products from './pages/products/Products';
 import { cozShoppingAPI } from './modules/cozShoppingAPI';
+import ToastContainer from './components/toast/ToastContainer';
 
 const App = () => {
   console.log(cozShoppingAPI);
   return (
     <BrowserRouter>
       <Header />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/bookmark" element={<Bookmark />} />

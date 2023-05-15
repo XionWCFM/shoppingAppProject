@@ -9,7 +9,7 @@ const FilterCategory = ({ filterImage }: FilterCategoryProps) => {
   const { filterlist } = useParams();
   console.log(filterlist);
   return (
-    <ul className=" flex">
+    <ul className=" mb-6 flex">
       {filterImage.map((imgData: FilterImageInterface, index) => (
         <NavLink
           to={`/products/${imgData.param}`}

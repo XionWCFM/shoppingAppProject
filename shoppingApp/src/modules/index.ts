@@ -3,11 +3,13 @@ import darkSlice from './darkSlice';
 import { cozShoppingAPI } from './cozShoppingAPI';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import addBookmarkProperty from './middleware/addBookMarkProperty';
+import toastSlice from './toastSlice';
 
 const store = configureStore({
   reducer: {
     dark: darkSlice.reducer,
     [cozShoppingAPI.reducerPath]: cozShoppingAPI.reducer,
+    toast: toastSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

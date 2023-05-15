@@ -18,11 +18,6 @@ const addBookmarkProperty: Middleware = () => (next) => (action) => {
         ? { ...data, bookmark: false }
         : { ...data, bookmark: true };
     });
-
-    // ({
-    //   ...data,
-    //   bookmark: false,
-    // })
   }
   return next(action);
 };

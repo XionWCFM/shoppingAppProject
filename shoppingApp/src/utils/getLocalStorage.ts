@@ -1,7 +1,6 @@
 const getLocalStorage = <T>(key: string, initialValue: T): T => {
-  return localStorage.getItem(key) === null
-    ? initialValue
-    : JSON.parse(localStorage.getItem(key) as string);
+  const getItem = localStorage.getItem(key);
+  return getItem === null ? initialValue : JSON.parse(getItem);
 };
 
 export default getLocalStorage;

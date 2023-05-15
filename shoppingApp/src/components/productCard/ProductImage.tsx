@@ -4,7 +4,7 @@ import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import useBookmark from '../../hooks/useBookmark';
 import createToastMessage from '../../utils/createToastMessage';
 import { useDispatch } from 'react-redux';
-import { showToast } from '../../modules/toastSlice';
+import { showToastAsync } from '../../modules/toastSlice';
 
 interface ProductImageProps {
   src?: string | undefined;
@@ -27,7 +27,7 @@ const ProductImage = ({ src, data }: ProductImageProps) => {
         className="absolute bottom-1 right-3 m-3 cursor-pointer"
         onClick={() => {
           bookMarkHandler(data);
-          dispatch(showToast(createToastMessage(!data.bookmark)));
+          dispatch(showToastAsync(createToastMessage(!data.bookmark)));
         }}
       >
         <BookMarkStar

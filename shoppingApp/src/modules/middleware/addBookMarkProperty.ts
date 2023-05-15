@@ -9,10 +9,20 @@ const addBookmarkProperty: Middleware = () => (next) => (action) => {
   );
 
   if (action.type.endsWith('fulfilled')) {
-    action.payload = action.payload.map((data: CozApiInterface) => ({
-      ...data,
-      bookmark: false,
-    }));
+    action.payload = action.payload.map((data: CozApiInterface) => {
+      const localDataIdx = getBookMarkData.findIndex(
+        (localData: CozApiInterface) => localData.id === data.id,
+      );
+
+      return localDataIdx === -1
+        ? { ...data, bookmark: false }
+        : { ...data, bookmark: true };
+    });
+
+    // ({
+    //   ...data,
+    //   bookmark: false,
+    // })
   }
   return next(action);
 };

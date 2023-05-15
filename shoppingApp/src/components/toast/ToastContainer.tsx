@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { hideToast } from '../../modules/toastSlice';
-import { useEffect, useRef } from 'react';
 import { RootState } from '../../modules';
 import { createPortal } from 'react-dom';
 import { starActiveColor, starNonActiveColor } from '../../colors/colors';
@@ -11,23 +10,6 @@ const ToastContainer = () => {
   const messages = useSelector((state: RootState) => state.toast.messages);
   const dispatch = useDispatch();
   const toastElement = document.getElementById('toast') as HTMLElement;
-  const timersRef = useRef<NodeJS.Timeout[]>([]);
-
-  useEffect(() => {
-    timersRef.current = [];
-
-    messages.forEach((message) => {
-      const timer = setTimeout(() => {
-        dispatch(hideToast(message.id));
-      }, 1200);
-      timersRef.current.push(timer);
-    });
-    console.log(timersRef);
-    return () => {
-      timersRef.current.forEach((timer) => clearTimeout(timer));
-    };
-  }, [dispatch, messages]);
-
   return (
     <>
       {createPortal(

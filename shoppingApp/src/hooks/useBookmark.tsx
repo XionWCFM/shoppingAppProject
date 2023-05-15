@@ -1,21 +1,32 @@
 import { useDispatch } from 'react-redux';
 import { CozApiInterface, cozShoppingAPI } from '../modules/cozShoppingAPI';
+import getLocalStorage from '../utils/getLocalStorage';
 
 const useBookmark = () => {
   const dispatch = useDispatch();
   const patch = cozShoppingAPI.util.updateQueryData;
+  let localBookMarkData: CozApiInterface[] = getLocalStorage<CozApiInterface[]>(
+    'bookmark',
+    [],
+  );
   const bookmarkHanlder = (apiData: CozApiInterface): void =>
     dispatch(
       patch('getProduct', undefined, (draft: CozApiInterface[]) => {
         const index = draft.findIndex(
           (data: CozApiInterface) => data.id === apiData.id,
         );
-        console.log(index);
-        if (index !== -1) {
-          draft[index].bookmark = !draft[index].bookmark;
+        if (index === -1) return;
+        draft[index].bookmark = !draft[index].bookmark;
+        const bookMarkIndex = localBookMarkData.findIndex(
+          (data: CozApiInterface) => data.id === apiData.id,
+        );
+
+        if (bookMarkIndex === -1) {
+          localBookMarkData = localBookMarkData.concat(apiData);
         } else {
-          console.log('일단 뭐라도 한다..');
+          localBookMarkData.splice(bookMarkIndex, 1);
         }
+        localStorage.bookmark = JSON.stringify(localBookMarkData);
       }),
     );
   return bookmarkHanlder;

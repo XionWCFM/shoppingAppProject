@@ -17,7 +17,7 @@ const Header = () => {
         <Link to="/" className="text-lightfont">
           <div className="fcc">
             <Logo />
-            <span className=" ml-3 text-2xl text-slate-800 dark:text-slate-200">
+            <span className=" invisible ml-3 text-xs text-slate-800 dark:text-slate-200 md:visible md:text-2xl ">
               COZ Shopping
             </span>
           </div>

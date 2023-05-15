@@ -47,7 +47,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.8.0"],\
             ["react-redux", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:8.0.5"],\
             ["react-router-dom", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.11.1"],\
-            ["redux-persist", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.0.0"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"],\
             ["vite", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.3.5"]\
@@ -3366,32 +3365,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["redux-persist", [\
-        ["npm:6.0.0", {\
-          "packageLocation": "./.yarn/cache/redux-persist-npm-6.0.0-56dad69feb-edaf10dbf1.zip/node_modules/redux-persist/",\
-          "packageDependencies": [\
-            ["redux-persist", "npm:6.0.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/redux-persist-virtual-9b74edc5e4/0/cache/redux-persist-npm-6.0.0-56dad69feb-edaf10dbf1.zip/node_modules/redux-persist/",\
-          "packageDependencies": [\
-            ["redux-persist", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.0.0"],\
-            ["@types/react", "npm:18.2.6"],\
-            ["@types/redux", null],\
-            ["react", "npm:18.2.0"],\
-            ["redux", null]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "@types/redux",\
-            "react",\
-            "redux"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["redux-thunk", [\
         ["npm:2.4.2", {\
           "packageLocation": "./.yarn/cache/redux-thunk-npm-2.4.2-3acdaaf7b0-c7f757f6c3.zip/node_modules/redux-thunk/",\
@@ -3591,7 +3564,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.8.0"],\
             ["react-redux", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:8.0.5"],\
             ["react-router-dom", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.11.1"],\
-            ["redux-persist", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:6.0.0"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"],\
             ["vite", "virtual:c3d181ba9d338ebdf3bf0662c26b7837ec4f7a4c19d5b54bb431b4f8a4accd40a9fcbee96c7b857123bd3f49ddbd6c5bfec52d45e0de6298608b1c013d211331#npm:4.3.5"]\

@@ -16,7 +16,7 @@ const useToastFlip = (setTime = 3000): ToastFlipHookInterface => {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [setTime]);
 
   return [toastShow, setToastShow];
 };

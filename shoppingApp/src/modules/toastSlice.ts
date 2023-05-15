@@ -15,17 +15,6 @@ const initialState: ToastInterface = {
   messages: [],
 };
 
-let nextId = 0;
-
-for (let i = 0; i < 4; i++) {
-  initialState.messages.push({
-    id: nextId++,
-    content: `안녕하세요 ${i}`,
-    isVisible: true,
-    bookmark: true,
-  });
-}
-
 const toastSlice = createSlice({
   name: 'toastSlice',
   initialState,

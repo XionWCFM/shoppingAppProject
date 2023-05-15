@@ -2,6 +2,10 @@ import BookMarkStar from '../../icons/BookMarkStar';
 import { starNonActiveColor, starActiveColor } from '../../colors/colors';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import useBookmark from '../../hooks/useBookmark';
+import createToastMessage from '../../utils/createToastMessage';
+import { useDispatch } from 'react-redux';
+import { showToast } from '../../modules/toastSlice';
+
 interface ProductImageProps {
   src?: string | undefined;
   data: CozApiInterface;
@@ -9,7 +13,7 @@ interface ProductImageProps {
 
 const ProductImage = ({ src, data }: ProductImageProps) => {
   const bookMarkHandler = useBookmark();
-
+  const dispatch = useDispatch();
   return (
     <div className={` relative mb-3 flex`}>
       <div className={` rounded-2xl `}>
@@ -23,6 +27,7 @@ const ProductImage = ({ src, data }: ProductImageProps) => {
         className="absolute bottom-1 right-3 m-3 cursor-pointer"
         onClick={() => {
           bookMarkHandler(data);
+          dispatch(showToast(createToastMessage(!data.bookmark)));
         }}
       >
         <BookMarkStar

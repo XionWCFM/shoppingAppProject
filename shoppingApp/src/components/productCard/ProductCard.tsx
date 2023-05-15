@@ -1,5 +1,5 @@
 import ProductImage from './ProductImage';
-import { imageWidth } from './ImageWH';
+import { imageWidth } from '../../variable/ImageWH';
 import CardProps from '../../types/CardProps';
 import Modal from '../modal/Modal';
 import { useState } from 'react';

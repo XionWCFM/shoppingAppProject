@@ -2,6 +2,7 @@ import BookMarkStar from '../../icons/BookMarkStar';
 import { starNonActiveColor, starActiveColor } from '../../colors/colors';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import useBookmark from '../../hooks/useBookmark';
+import Toast from '../toast/Toast';
 interface ProductImageProps {
   src?: string | undefined;
   data: CozApiInterface;
@@ -12,6 +13,7 @@ const ProductImage = ({ src, data }: ProductImageProps) => {
 
   return (
     <div className={` relative mb-3 flex`}>
+      <Toast data={data} />
       <div className={` rounded-2xl `}>
         <img
           src={src}

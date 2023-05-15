@@ -6,7 +6,7 @@ export type ToastFlipHookInterface = [
 ];
 
 const useToastFlip = (setTime = 3000): ToastFlipHookInterface => {
-  const [toastShow, setToastShow] = useState(true);
+  const [toastShow, setToastShow] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {

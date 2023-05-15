@@ -17,7 +17,7 @@ const CardContainer = ({ children, apiData }: Props) => {
   return (
     <section className=" mb-[1.88rem] max-w-[70.5rem]">
       {children}
-      <div className=" mt-3 grid grid-cols-1 md:grid-cols-2 md:gap-2 xl:grid-cols-4 xl:gap-3">
+      <div className=" mt-3 grid grid-cols-1 md:grid-cols-2 md:gap-10 xl:grid-cols-4 xl:gap-6 ">
         {apiData.map((data: CozApiInterface) => {
           switch (data.type) {
             case PRODUCT:

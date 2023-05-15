@@ -21,7 +21,12 @@ const Toast = ({ data, setShowToast }: ToastProps) => {
             <BookMarkStar
               fill={bookmark ? starActiveColor : starNonActiveColor}
             />
-            <span className=" mx-2">상품이 북마크에 추가되었습니다.</span>
+            {data.bookmark ? (
+              <span className=" mx-2">상품이 북마크에 추가되었습니다.</span>
+            ) : (
+              <span className=" mx-2">상품이 북마크에서 제거되었습니다.</span>
+            )}
+
             <TiDeleteOutline
               className="  h-[2rem] w-[2rem] cursor-pointer"
               onClick={() => setShowToast(false)}

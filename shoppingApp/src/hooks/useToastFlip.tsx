@@ -1,24 +1,17 @@
 import { useEffect, useState, Dispatch, SetStateAction } from 'react';
 
-export type ToastFlipHookInterface = [
-  boolean,
-  Dispatch<SetStateAction<boolean>>,
-];
+export type UseToastType = [boolean, Dispatch<SetStateAction<boolean>>];
 
-const useToastFlip = (setTime = 3000): ToastFlipHookInterface => {
-  const [toastShow, setToastShow] = useState(false);
+const useToastFlip = (): UseToastType => {
+  const [toastShow, setShowToast] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setToastShow(false);
-    }, setTime);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+  }, [toastShow]);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [setTime]);
-
-  return [toastShow, setToastShow];
+  return [toastShow, setShowToast];
 };
 
 export default useToastFlip;

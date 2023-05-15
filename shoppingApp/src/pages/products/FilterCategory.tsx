@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { FilterImageInterface } from '../../assets/filterimage/index';
 
 export interface FilterCategoryProps {
@@ -6,10 +6,20 @@ export interface FilterCategoryProps {
 }
 
 const FilterCategory = ({ filterImage }: FilterCategoryProps) => {
+  const { filterlist } = useParams();
+  console.log(filterlist);
   return (
     <ul className=" flex">
       {filterImage.map((imgData: FilterImageInterface, index) => (
-        <Link to={`/products/${imgData.param}`} key={`filterCard${index}`}>
+        <NavLink
+          to={`/products/${imgData.param}`}
+          key={`filterCard${index}`}
+          className={({ isActive }) =>
+            isActive
+              ? ` text-pointbluelight underline decoration-4 underline-offset-8 `
+              : ` lightmode darkmode`
+          }
+        >
           <li className=" fcc flex-col">
             <img
               className=" mx-[1.125rem] mb-1 mt-[1.5rem]"
@@ -18,7 +28,7 @@ const FilterCategory = ({ filterImage }: FilterCategoryProps) => {
             />
             <p>{imgData.title}</p>
           </li>
-        </Link>
+        </NavLink>
       ))}
     </ul>
   );

@@ -1,10 +1,7 @@
 import MainContainer from '../../components/layouts/MainContainer';
 import Loading from '../../components/loading/Loading';
 import CardContainer from '../../components/productCard/CardContainer';
-import {
-  CozApiInterface,
-  useGetProductQuery,
-} from '../../modules/cozShoppingAPI';
+import { ProductType, useGetProductQuery } from '../../modules/ProductApi';
 import Error from '../../components/loading/Error';
 const Bookmark = () => {
   const { data, isError, isLoading } = useGetProductQuery(undefined);
@@ -23,9 +20,7 @@ const Bookmark = () => {
       </MainContainer>
     );
 
-  const bookMarkData = data.filter(
-    (apiData: CozApiInterface) => apiData.bookmark,
-  );
+  const bookMarkData = data.filter((apiData: ProductType) => apiData.bookmark);
   console.log(bookMarkData.length);
   return (
     <MainContainer>

@@ -1,6 +1,6 @@
 import BookMarkStar from '../../assets/icons/BookMarkStar';
 import { starNonActiveColor, starActiveColor } from '../../colors/colors';
-import { CozApiInterface } from '../../modules/cozShoppingAPI';
+import { ProductType } from '../../modules/ProductApi';
 import useBookmark from '../../hooks/useBookmark';
 import createToastMessage from '../../utils/createToastMessage';
 import { useDispatch } from 'react-redux';
@@ -8,7 +8,7 @@ import { showToastAsync } from '../../modules/toastSlice';
 
 interface ProductImageProps {
   src?: string | undefined;
-  data: CozApiInterface;
+  data: ProductType;
 }
 
 const ProductImage = ({ src, data }: ProductImageProps) => {

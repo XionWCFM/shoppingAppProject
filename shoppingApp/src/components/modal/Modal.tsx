@@ -5,7 +5,7 @@ import ModalProps from '../../types/ModalProps';
 
 const portalElement = document.getElementById('modal') as HTMLElement;
 
-const Modal = ({ setIsOpen, src, data, title }: ModalProps) => {
+const Modal = ({ setIsOpen, src, product, title }: ModalProps) => {
   return (
     <>
       {createPortal(
@@ -14,7 +14,7 @@ const Modal = ({ setIsOpen, src, data, title }: ModalProps) => {
           <ModalImage
             setIsOpen={setIsOpen}
             src={src}
-            data={data}
+            product={product}
             title={title}
           />
         </>,

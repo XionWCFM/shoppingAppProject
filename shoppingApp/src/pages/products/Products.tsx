@@ -1,7 +1,7 @@
 import MainContainer from '../../components/layouts/MainContainer';
 import Loading from '../../components/loading/Loading';
 import CardContainer from '../../components/productCard/CardContainer';
-import { ProductType, useGetProductQuery } from '../../modules/ProductApi';
+import { ProductType, useGetProductQuery } from '../../modules/productApi';
 import FilterCategory from './FilterCategory';
 import { filterImage } from '../../assets/filterimage/index';
 import { useParams } from 'react-router-dom';
@@ -31,31 +31,31 @@ const Products = () => {
         <Error />
       </MainContainer>
     );
-  let filterData: ProductType[] = [];
+  let filteredProduct: ProductType[] = [];
 
   switch (filterlist) {
     case product:
-      filterData = data.filter(
-        (apiData: ProductType) => apiData.type === PRODUCT,
+      filteredProduct = data.filter(
+        (product: ProductType) => product.type === PRODUCT,
       );
       break;
     case category:
-      filterData = data.filter(
-        (apiData: ProductType) => apiData.type === CATEGORY,
+      filteredProduct = data.filter(
+        (product: ProductType) => product.type === CATEGORY,
       );
       break;
     case exhibition:
-      filterData = data.filter(
-        (apiData: ProductType) => apiData.type === EXHIBITION,
+      filteredProduct = data.filter(
+        (product: ProductType) => product.type === EXHIBITION,
       );
       break;
     case brand:
-      filterData = data.filter(
-        (apiData: ProductType) => apiData.type === BRAND,
+      filteredProduct = data.filter(
+        (product: ProductType) => product.type === BRAND,
       );
       break;
     case list:
-      filterData = data;
+      filteredProduct = data;
       break;
     default:
       return <div>잘못된 경로입니다.</div>;
@@ -65,7 +65,7 @@ const Products = () => {
     <MainContainer>
       <>
         <FilterCategory filterImage={filterImage} />
-        <CardContainer apiData={filterData}>
+        <CardContainer product={filteredProduct}>
           <h2 className=" text-2xl font-bold">상품 리스트</h2>
         </CardContainer>
       </>

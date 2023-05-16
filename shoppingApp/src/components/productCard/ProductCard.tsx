@@ -3,21 +3,21 @@ import { imageWidth } from '../../variable/ImageWH';
 import CardProps from '../../types/CardProps';
 import Modal from '../modal/Modal';
 import { useState } from 'react';
-const ProductCard = ({ data }: CardProps) => {
+const ProductCard = ({ product }: CardProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { title, price, discountPercentage, image_url } = data;
+  const { title, price, discountPercentage, image_url } = product;
   return (
     <figure className={`max-w-[${imageWidth}] flex flex-col`}>
       {isOpen && (
         <Modal
           setIsOpen={setIsOpen}
           src={image_url}
-          data={data}
+          product={product}
           title={title}
         />
       )}
-      <ProductImage src={image_url} data={data} />
+      <ProductImage src={image_url} product={product} />
       <div onClick={() => setIsOpen((state) => !state)} className=" cardtext ">
         <div className=" flex items-center justify-between">
           <span className=" flex-shrink-0 overflow-hidden text-ellipsis">

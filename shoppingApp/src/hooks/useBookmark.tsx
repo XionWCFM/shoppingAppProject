@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
-import { ProductType, ProductApi } from '../modules/ProductApi';
+import { ProductType, ProductApi } from '../modules/productApi';
 import getLocalStorage from '../utils/getLocalStorage';
 
 const useBookmark = () => {
   const dispatch = useDispatch();
   const patch = ProductApi.util.updateQueryData;
-  const bookmarkHanlder = (apiData: ProductType): void =>
+  const bookmarkHanlder = (targetProduct: ProductType): void =>
     dispatch(
       patch('getProduct', undefined, (draft: ProductType[]) => {
         let localBookMarkData: ProductType[] = getLocalStorage<ProductType[]>(
@@ -14,17 +14,17 @@ const useBookmark = () => {
         );
 
         const index = draft.findIndex(
-          (data: ProductType) => data.id === apiData.id,
+          (product: ProductType) => product.id === targetProduct.id,
         );
         if (index === -1) return;
         draft[index].bookmark = !draft[index].bookmark;
 
         const bookMarkIndex = localBookMarkData.findIndex(
-          (data: ProductType) => data.id === apiData.id,
+          (product: ProductType) => product.id === targetProduct.id,
         );
 
         if (bookMarkIndex === -1) {
-          localBookMarkData = localBookMarkData.concat(apiData);
+          localBookMarkData = localBookMarkData.concat(targetProduct);
         } else {
           localBookMarkData.splice(bookMarkIndex, 1);
         }

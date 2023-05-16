@@ -1,6 +1,6 @@
 import BookMarkStar from '../../assets/icons/BookMarkStar';
 import { starNonActiveColor, starActiveColor } from '../../colors/colors';
-import { ProductType } from '../../modules/ProductApi';
+import { ProductType } from '../../modules/productApi';
 import useBookmark from '../../hooks/useBookmark';
 import createToastMessage from '../../utils/createToastMessage';
 import { useDispatch } from 'react-redux';
@@ -8,10 +8,10 @@ import { showToastAsync } from '../../modules/toastSlice';
 
 interface ProductImageProps {
   src?: string | undefined;
-  data: ProductType;
+  product: ProductType;
 }
 
-const ProductImage = ({ src, data }: ProductImageProps) => {
+const ProductImage = ({ src, product }: ProductImageProps) => {
   const bookMarkHandler = useBookmark();
   const dispatch = useDispatch();
   return (
@@ -26,13 +26,13 @@ const ProductImage = ({ src, data }: ProductImageProps) => {
       <button
         className="absolute bottom-1 right-3 m-3 cursor-pointer"
         onClick={() => {
-          bookMarkHandler(data);
-          dispatch(showToastAsync(createToastMessage(!data.bookmark)));
+          bookMarkHandler(product);
+          dispatch(showToastAsync(createToastMessage(!product.bookmark)));
         }}
       >
         <BookMarkStar
           className=" "
-          fill={data.bookmark ? starActiveColor : starNonActiveColor}
+          fill={product.bookmark ? starActiveColor : starNonActiveColor}
         />
       </button>
     </div>

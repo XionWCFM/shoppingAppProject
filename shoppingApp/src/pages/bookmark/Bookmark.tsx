@@ -1,7 +1,7 @@
 import MainContainer from '../../components/layouts/MainContainer';
 import Loading from '../../components/loading/Loading';
 import CardContainer from '../../components/productCard/CardContainer';
-import { ProductType, useGetProductQuery } from '../../modules/ProductApi';
+import { ProductType, useGetProductQuery } from '../../modules/productApi';
 import Error from '../../components/loading/Error';
 const Bookmark = () => {
   const { data, isError, isLoading } = useGetProductQuery(undefined);
@@ -20,8 +20,7 @@ const Bookmark = () => {
       </MainContainer>
     );
 
-  const bookMarkData = data.filter((apiData: ProductType) => apiData.bookmark);
-  console.log(bookMarkData.length);
+  const bookMarkData = data.filter((product: ProductType) => product.bookmark);
   return (
     <MainContainer>
       <>
@@ -29,7 +28,7 @@ const Bookmark = () => {
         {bookMarkData.length === 0 ? (
           <p className=" py-7">북마크 된 상품이 없습니다.</p>
         ) : (
-          <CardContainer apiData={bookMarkData}>
+          <CardContainer product={bookMarkData}>
             <h2 className=" text-2xl font-bold">북마크 리스트</h2>
           </CardContainer>
         )}

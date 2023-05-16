@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import darkSlice from './darkSlice';
-import { ProductApi } from './ProductApi';
+import { ProductApi } from './productApi';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import addBookmarkProperty from './middleware/addBookMarkProperty';
 import toastSlice from './toastSlice';

@@ -4,8 +4,8 @@ import CardProps from '../../types/CardProps';
 import { useState } from 'react';
 import Modal from '../modal/Modal';
 
-const BrandCard = ({ data }: CardProps) => {
-  const { brand_name, brand_image_url, follower } = data;
+const BrandCard = ({ product }: CardProps) => {
+  const { brand_name, brand_image_url, follower } = product;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,11 +17,11 @@ const BrandCard = ({ data }: CardProps) => {
         <Modal
           setIsOpen={setIsOpen}
           src={brand_image_url}
-          data={data}
+          product={product}
           title={brand_name as string}
         />
       )}
-      <ProductImage src={brand_image_url} data={data} />
+      <ProductImage src={brand_image_url} product={product} />
       <div onClick={() => setIsOpen((state) => !state)} className="cardtext">
         <div className=" flex items-center justify-between">
           <span>{brand_name}</span>

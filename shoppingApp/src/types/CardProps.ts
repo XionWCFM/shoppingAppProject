@@ -1,6 +1,6 @@
-import { CozApiInterface } from '../modules/cozShoppingAPI';
+import { ProductType } from '../modules/ProductApi';
 interface CardProps {
-  data: CozApiInterface;
+  data: ProductType;
 }
 
 export default CardProps;

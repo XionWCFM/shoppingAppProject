@@ -1,10 +1,7 @@
 import MainContainer from '../../components/layouts/MainContainer';
 import Loading from '../../components/loading/Loading';
 import CardContainer from '../../components/productCard/CardContainer';
-import {
-  CozApiInterface,
-  useGetProductQuery,
-} from '../../modules/cozShoppingAPI';
+import { ProductType, useGetProductQuery } from '../../modules/ProductApi';
 import FilterCategory from './FilterCategory';
 import { filterImage } from '../../assets/filterimage/index';
 import { useParams } from 'react-router-dom';
@@ -34,27 +31,27 @@ const Products = () => {
         <Error />
       </MainContainer>
     );
-  let filterData: CozApiInterface[] = [];
+  let filterData: ProductType[] = [];
 
   switch (filterlist) {
     case product:
       filterData = data.filter(
-        (apiData: CozApiInterface) => apiData.type === PRODUCT,
+        (apiData: ProductType) => apiData.type === PRODUCT,
       );
       break;
     case category:
       filterData = data.filter(
-        (apiData: CozApiInterface) => apiData.type === CATEGORY,
+        (apiData: ProductType) => apiData.type === CATEGORY,
       );
       break;
     case exhibition:
       filterData = data.filter(
-        (apiData: CozApiInterface) => apiData.type === EXHIBITION,
+        (apiData: ProductType) => apiData.type === EXHIBITION,
       );
       break;
     case brand:
       filterData = data.filter(
-        (apiData: CozApiInterface) => apiData.type === BRAND,
+        (apiData: ProductType) => apiData.type === BRAND,
       );
       break;
     case list:

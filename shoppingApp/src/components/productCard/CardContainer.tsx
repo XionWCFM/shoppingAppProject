@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { CozApiInterface } from '../../modules/cozShoppingAPI';
+import { ProductType } from '../../modules/ProductApi';
 import BrandCard from './BrandCard';
 import CategoryCard from './CategoryCard';
 import ExhibitionCard from './ExhibitonCard';
@@ -10,7 +10,7 @@ const { PRODUCT, CATEGORY, EXHIBITION, BRAND } = CardVariable;
 
 interface Props {
   children: ReactElement;
-  apiData: CozApiInterface[];
+  apiData: ProductType[];
 }
 
 const CardContainer = ({ children, apiData }: Props) => {
@@ -18,7 +18,7 @@ const CardContainer = ({ children, apiData }: Props) => {
     <section className=" mb-[1.88rem] max-w-[70.5rem]">
       {children}
       <div className=" mt-3 grid grid-cols-1 md:grid-cols-2 md:gap-10 xl:grid-cols-4 xl:gap-6 ">
-        {apiData.map((data: CozApiInterface) => {
+        {apiData.map((data: ProductType) => {
           switch (data.type) {
             case PRODUCT:
               return <ProductCard data={data} key={`card${data.id}`} />;

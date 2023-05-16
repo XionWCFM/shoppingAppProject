@@ -8,7 +8,7 @@ import {
   fetchBaseQuery,
 } from '@reduxjs/toolkit/query/react';
 
-export interface CozApiInterface {
+export interface ProductType {
   id: number;
   type: string;
   title: string;
@@ -22,7 +22,7 @@ export interface CozApiInterface {
   bookmark: boolean;
 }
 
-export const cozShoppingAPI = createApi({
+export const ProductApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `http://cozshopping.codestates-seb.link/api/v1/`,
   }),
@@ -48,4 +48,4 @@ export const cozShoppingAPI = createApi({
   }),
 });
 
-export const { useGetProductQuery } = cozShoppingAPI;
+export const { useGetProductQuery } = ProductApi;

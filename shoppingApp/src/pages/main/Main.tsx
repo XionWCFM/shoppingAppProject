@@ -1,10 +1,7 @@
 import MainContainer from '../../components/layouts/MainContainer';
 import Loading from '../../components/loading/Loading';
 import CardContainer from '../../components/productCard/CardContainer';
-import {
-  CozApiInterface,
-  useGetProductQuery,
-} from '../../modules/cozShoppingAPI';
+import { ProductType, useGetProductQuery } from '../../modules/ProductApi';
 import Error from '../../components/loading/Error';
 const Main = () => {
   const { data, isError, isLoading } = useGetProductQuery(undefined);
@@ -24,7 +21,7 @@ const Main = () => {
     );
   const onlyFourDataRender = data.slice(0, 4);
   const onlyFourBookMarkDataRender = data
-    .filter((apiData: CozApiInterface) => apiData.bookmark)
+    .filter((apiData: ProductType) => apiData.bookmark)
     .slice(0, 4);
   return (
     <MainContainer>

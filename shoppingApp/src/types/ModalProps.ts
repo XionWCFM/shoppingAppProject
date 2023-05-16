@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from 'react';
-import { CozApiInterface } from '../modules/cozShoppingAPI';
+import { ProductType } from '../modules/ProductApi';
 
 interface ModalProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   src: string;
   title: string;
-  data: CozApiInterface;
+  data: ProductType;
 }
 
 export default ModalProps;

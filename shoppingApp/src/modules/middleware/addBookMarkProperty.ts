@@ -1,5 +1,5 @@
 import { Middleware } from '@reduxjs/toolkit';
-import { CozApiInterface } from '../cozShoppingAPI';
+import { CozApiInterface } from '../ProductApi';
 import getLocalStorage from '../../utils/getLocalStorage';
 
 const addBookmarkProperty: Middleware = () => (next) => (action) => {

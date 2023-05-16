@@ -12,6 +12,7 @@ import {
   CardVariable,
   lowerCaseCardVariable,
 } from '../../variable/CardVariable';
+import Error from '../../components/loading/Error';
 
 const { PRODUCT, CATEGORY, EXHIBITION, BRAND } = CardVariable;
 const { product, category, exhibition, brand, list } = lowerCaseCardVariable;
@@ -20,15 +21,19 @@ const Products = () => {
   const { filterlist } = useParams();
 
   const { data, isError, isLoading } = useGetProductQuery(undefined);
-  if (isLoading || isError || !data)
+  if (isLoading)
     return (
       <MainContainer>
-        <>
-          <Loading />
-        </>
+        <Loading />
       </MainContainer>
     );
 
+  if (isError || !data)
+    return (
+      <MainContainer>
+        <Error />
+      </MainContainer>
+    );
   let filterData: CozApiInterface[] = [];
 
   switch (filterlist) {

@@ -3,7 +3,7 @@ import { hideToast } from '../../modules/toastSlice';
 import { RootState } from '../../modules';
 import { createPortal } from 'react-dom';
 import { starActiveColor, starNonActiveColor } from '../../colors/colors';
-import BookMarkStar from '../../icons/BookMarkStar';
+import BookMarkStar from '../../assets/icons/BookMarkStar';
 import { TiDeleteOutline } from 'react-icons/ti';
 
 const ToastContainer = () => {

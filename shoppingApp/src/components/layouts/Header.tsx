@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Hamburger from '../../icons/Hamburger';
-import Logo from '../../icons/Logo';
+import Hamburger from '../../assets/icons/Hamburger';
+import Logo from '../../assets/icons/Logo';
 import Dropdown from '../dropdown/Dropdown';
 import DarkToggleButton from '../DarkToggleButton';
 import { useSelector } from 'react-redux';

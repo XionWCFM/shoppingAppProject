@@ -1,6 +1,6 @@
-import BookMarkStar from '../../icons/BookMarkStar';
+import BookMarkStar from '../../assets/icons/BookMarkStar';
 import { starActiveColor, starNonActiveColor } from '../../colors/colors';
-import Delete from '../../icons/Delete';
+import Delete from '../../assets/icons/Delete';
 import ModalProps from '../../types/ModalProps';
 import useBookmark from '../../hooks/useBookmark';
 import React from 'react';

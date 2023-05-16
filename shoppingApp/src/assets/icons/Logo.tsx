@@ -1,4 +1,4 @@
-import SvgTagProps from '../types/SvgTagProps';
+import SvgTagProps from '../../types/SvgTagProps';
 
 const Logo = ({ width = 55, height = 30 }: SvgTagProps) => {
   return (

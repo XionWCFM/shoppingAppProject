@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import Gift from '../../icons/Gift';
-import DropdownStar from '../../icons/DropdownStar';
+import Gift from '../../assets/icons/Gift';
+import DropdownStar from '../../assets/icons/DropdownStar';
 
 const Dropdown = () => {
   return (

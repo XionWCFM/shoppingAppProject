@@ -1,5 +1,5 @@
-import FillSvgProps from '../types/FillSvgProps';
-import { starNonActiveColor } from '../colors/colors';
+import FillSvgProps from '../../types/FillSvgProps';
+import { starNonActiveColor } from '../../colors/colors';
 
 const BookMarkStar = ({
   className,

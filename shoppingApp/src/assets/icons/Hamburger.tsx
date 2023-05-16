@@ -1,4 +1,4 @@
-import SvgTagProps from '../types/SvgTagProps';
+import SvgTagProps from '../../types/SvgTagProps';
 
 interface HamburgerProps extends SvgTagProps {
   stroke: string;

@@ -1,4 +1,4 @@
-import FillSvgProps from '../types/FillSvgProps';
+import FillSvgProps from '../../types/FillSvgProps';
 
 const Delete = ({
   width = 31,

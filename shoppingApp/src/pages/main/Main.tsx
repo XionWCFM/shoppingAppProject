@@ -5,19 +5,23 @@ import {
   CozApiInterface,
   useGetProductQuery,
 } from '../../modules/cozShoppingAPI';
-
+import Error from '../../components/loading/Error';
 const Main = () => {
   const { data, isError, isLoading } = useGetProductQuery(undefined);
 
-  if (isLoading || isError || !data)
+  if (isLoading)
     return (
       <MainContainer>
-        <>
-          <Loading />
-        </>
+        <Loading />
       </MainContainer>
     );
 
+  if (isError || !data)
+    return (
+      <MainContainer>
+        <Error />
+      </MainContainer>
+    );
   const onlyFourDataRender = data.slice(0, 4);
   const onlyFourBookMarkDataRender = data
     .filter((apiData: CozApiInterface) => apiData.bookmark)

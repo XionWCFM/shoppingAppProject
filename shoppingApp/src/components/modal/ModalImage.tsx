@@ -11,7 +11,7 @@ import createToastMessage from '../../utils/createToastMessage';
 const ModalImageWidth = '46.5rem';
 const ModalImageHeight = '30rem';
 
-const ModalImage = ({ data, src, title, setIsOpen }: ModalProps) => {
+const ModalImage = ({ product, src, title, setIsOpen }: ModalProps) => {
   const bookMarkHandler = useBookmark();
   const dispatch = useDispatch();
 
@@ -37,13 +37,13 @@ const ModalImage = ({ data, src, title, setIsOpen }: ModalProps) => {
           <div className=" flex">
             <button
               onClick={() => {
-                bookMarkHandler(data);
-                dispatch(showToastAsync(createToastMessage(!data.bookmark)));
+                bookMarkHandler(product);
+                dispatch(showToastAsync(createToastMessage(!product.bookmark)));
               }}
             >
               <BookMarkStar
                 className=" cursor-pointer"
-                fill={data.bookmark ? starActiveColor : starNonActiveColor}
+                fill={product.bookmark ? starActiveColor : starNonActiveColor}
               />
             </button>
             <span className=" px-2 text-xl font-bold text-white">{title}</span>

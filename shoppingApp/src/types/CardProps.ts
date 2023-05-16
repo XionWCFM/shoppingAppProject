@@ -1,6 +1,6 @@
-import { ProductType } from '../modules/ProductApi';
+import { ProductType } from '../modules/productApi';
 interface CardProps {
-  data: ProductType;
+  product: ProductType;
 }
 
 export default CardProps;

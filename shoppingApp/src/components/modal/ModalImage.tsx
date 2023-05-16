@@ -4,12 +4,16 @@ import Delete from '../../assets/icons/Delete';
 import ModalProps from '../../types/ModalProps';
 import useBookmark from '../../hooks/useBookmark';
 import React from 'react';
+import { showToastAsync } from '../../modules/toastSlice';
+import { useDispatch } from 'react-redux';
+import createToastMessage from '../../utils/createToastMessage';
 
 const ModalImageWidth = '46.5rem';
 const ModalImageHeight = '30rem';
 
 const ModalImage = ({ data, src, title, setIsOpen }: ModalProps) => {
   const bookMarkHandler = useBookmark();
+  const dispatch = useDispatch();
 
   return (
     <figure className="fixed bottom-0 left-0 right-0 top-0 z-20 flex items-center justify-center ">
@@ -31,7 +35,12 @@ const ModalImage = ({ data, src, title, setIsOpen }: ModalProps) => {
         />
         <div className="absolute bottom-[3.125rem] left-[3.375rem]">
           <div className=" flex">
-            <button onClick={() => bookMarkHandler(data)}>
+            <button
+              onClick={() => {
+                bookMarkHandler(data);
+                dispatch(showToastAsync(createToastMessage(!data.bookmark)));
+              }}
+            >
               <BookMarkStar
                 className=" cursor-pointer"
                 fill={data.bookmark ? starActiveColor : starNonActiveColor}

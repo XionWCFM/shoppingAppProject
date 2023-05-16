@@ -3,7 +3,6 @@ import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 export interface ToastMessageInterface {
   id: number;
   content: string;
-  isVisible: boolean;
   bookmark: boolean;
 }
 
@@ -23,7 +22,6 @@ const toastSlice = createSlice({
       state.messages.push({
         id: action.payload.id,
         content: action.payload.content,
-        isVisible: true,
         bookmark: action.payload.bookmark,
       });
     },

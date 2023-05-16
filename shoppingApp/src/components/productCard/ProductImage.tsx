@@ -1,4 +1,4 @@
-import BookMarkStar from '../../icons/BookMarkStar';
+import BookMarkStar from '../../assets/icons/BookMarkStar';
 import { starNonActiveColor, starActiveColor } from '../../colors/colors';
 import { CozApiInterface } from '../../modules/cozShoppingAPI';
 import useBookmark from '../../hooks/useBookmark';

@@ -6,12 +6,14 @@ import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
 import Products from './pages/products/Products';
 import ToastContainer from './components/toast/ToastContainer';
+import Modal from './components/modal/Modal';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
       <ToastContainer />
+      <Modal />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/bookmark" element={<Bookmark />} />

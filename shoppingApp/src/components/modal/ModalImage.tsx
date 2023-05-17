@@ -1,35 +1,43 @@
 import BookMarkStar from '../../assets/icons/BookMarkStar';
 import { starActiveColor, starNonActiveColor } from '../../colors/colors';
 import Delete from '../../assets/icons/Delete';
-import ModalProps from '../../types/ModalProps';
 import useBookmark from '../../hooks/useBookmark';
-import React from 'react';
 import { showToastAsync } from '../../modules/toastSlice';
 import { useDispatch } from 'react-redux';
 import createToastMessage from '../../utils/createToastMessage';
-
+import { useSelector } from 'react-redux';
+import { RootState } from '../../modules';
+import { closeModal } from '../../modules/modalSlice';
+import { ProductType, useGetProductQuery } from '../../modules/productApi';
+import Loading from '../loading/Loading';
+import Error from '../loading/Error';
 const ModalImageWidth = '46.5rem';
 const ModalImageHeight = '30rem';
 
-const ModalImage = ({ product, src, title, setIsOpen }: ModalProps) => {
+const ModalImage = () => {
+  const { data, isLoading, isError } = useGetProductQuery(undefined);
   const bookMarkHandler = useBookmark();
   const dispatch = useDispatch();
+  const modalState = useSelector((state: RootState) => state.modal);
+  const findModalIndex = data.findIndex(
+    (product: ProductType) => product.id === modalState.product.id,
+  );
+
+  if (isLoading) return <Loading />;
+  if (isError || !data) return <Error />;
 
   return (
     <figure className="fixed bottom-0 left-0 right-0 top-0 z-20 flex items-center justify-center ">
       <div className={`relative h-[30rem] w-[46.5rem]`}>
         <button
-          onClick={(event: React.MouseEvent) => {
-            console.log(event);
-            setIsOpen((state) => !state);
-          }}
           className=" absolute right-[2.875rem] top-[3.125rem] cursor-pointer"
+          onClick={() => dispatch(closeModal())}
         >
           <Delete />
         </button>
         <img
           className={`rounded-3xl shadow-md shadow-slate-400 h-[${ModalImageHeight}] w-[${ModalImageWidth}]`}
-          src={src}
+          src={modalState.src}
           width={ModalImageWidth}
           height={ModalImageHeight}
         />
@@ -37,16 +45,26 @@ const ModalImage = ({ product, src, title, setIsOpen }: ModalProps) => {
           <div className=" flex">
             <button
               onClick={() => {
-                bookMarkHandler(product);
-                dispatch(showToastAsync(createToastMessage(!product.bookmark)));
+                bookMarkHandler(data[findModalIndex]);
+                dispatch(
+                  showToastAsync(
+                    createToastMessage(!data[findModalIndex].bookmark),
+                  ),
+                );
               }}
             >
               <BookMarkStar
                 className=" cursor-pointer"
-                fill={product.bookmark ? starActiveColor : starNonActiveColor}
+                fill={
+                  data[findModalIndex].bookmark
+                    ? starActiveColor
+                    : starNonActiveColor
+                }
               />
             </button>
-            <span className=" px-2 text-xl font-bold text-white">{title}</span>
+            <span className=" px-2 text-xl font-bold text-white">
+              {modalState.title}
+            </span>
           </div>
         </div>
       </div>

@@ -1,24 +1,22 @@
 import ProductImage from './ProductImage';
 import { imageWidth } from '../../variable/ImageWH';
 import CardProps from '../../types/CardProps';
-import Modal from '../modal/Modal';
-import { useState } from 'react';
-const ProductCard = ({ product }: CardProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+import { useDispatch } from 'react-redux';
+import modalAttributeMatcher from '../../utils/modalAttributeMatcher';
+import { openModal } from '../../modules/modalSlice';
 
+const ProductCard = ({ product }: CardProps) => {
   const { title, price, discountPercentage, image_url } = product;
+  const dispatch = useDispatch();
+  const modalArguments = modalAttributeMatcher(product);
+
   return (
     <figure className={`max-w-[${imageWidth}] flex flex-col`}>
-      {isOpen && (
-        <Modal
-          setIsOpen={setIsOpen}
-          src={image_url}
-          product={product}
-          title={title}
-        />
-      )}
       <ProductImage src={image_url} product={product} />
-      <div onClick={() => setIsOpen((state) => !state)} className=" cardtext ">
+      <div
+        className=" cardtext "
+        onClick={() => dispatch(openModal(modalArguments))}
+      >
         <div className=" flex items-center justify-between">
           <span className=" flex-shrink-0 overflow-hidden text-ellipsis">
             {title}

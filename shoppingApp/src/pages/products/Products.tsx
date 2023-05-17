@@ -5,14 +5,11 @@ import { ProductType, useGetProductQuery } from '../../modules/productApi';
 import FilterCategory from './FilterCategory';
 import { filterImage } from '../../assets/filterimage/index';
 import { useParams } from 'react-router-dom';
-import {
-  CardVariable,
-  lowerCaseCardVariable,
-} from '../../variable/CardVariable';
+import { PascalCaseCardEnums, LowerCaseCardEnums } from '../../enums/card';
 import Error from '../../components/loading/Error';
 
-const { PRODUCT, CATEGORY, EXHIBITION, BRAND } = CardVariable;
-const { product, category, exhibition, brand, list } = lowerCaseCardVariable;
+const { PRODUCT, CATEGORY, EXHIBITION, BRAND } = PascalCaseCardEnums;
+const { product, category, exhibition, brand, list } = LowerCaseCardEnums;
 
 const Products = () => {
   const { filterlist } = useParams();

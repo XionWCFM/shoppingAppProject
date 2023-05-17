@@ -1,25 +1,23 @@
 import BackDrop from './BackDrop';
 import { createPortal } from 'react-dom';
 import ModalImage from './ModalImage';
-import ModalProps from '../../types/ModalProps';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../modules';
 
 const portalElement = document.getElementById('modal') as HTMLElement;
 
-const Modal = ({ setIsOpen, src, product, title }: ModalProps) => {
+const Modal = () => {
+  const isModalOpen = useSelector((state: RootState) => state.modal.isOpen);
   return (
     <>
-      {createPortal(
-        <>
-          <BackDrop />
-          <ModalImage
-            setIsOpen={setIsOpen}
-            src={src}
-            product={product}
-            title={title}
-          />
-        </>,
-        portalElement,
-      )}
+      {isModalOpen &&
+        createPortal(
+          <>
+            <BackDrop />
+            <ModalImage />
+          </>,
+          portalElement,
+        )}
     </>
   );
 };

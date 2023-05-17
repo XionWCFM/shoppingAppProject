@@ -4,12 +4,14 @@ import { ProductApi } from './productApi';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import addBookmarkProperty from './middleware/addBookMarkProperty';
 import toastSlice from './toastSlice';
+import modalSlice from './modalSlice';
 
 const store = configureStore({
   reducer: {
     dark: darkSlice.reducer,
     [ProductApi.reducerPath]: ProductApi.reducer,
     toast: toastSlice.reducer,
+    modal: modalSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware, addBookmarkProperty),

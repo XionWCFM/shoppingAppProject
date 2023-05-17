@@ -8,7 +8,7 @@ const addBookmarkProperty: Middleware = () => (next) => (action) => {
     [],
   );
 
-  if (action.type.endsWith('fulfilled')) {
+  if (action.type.endsWith('fulfilled') && action.payload !== undefined) {
     action.payload = action.payload.map((data: ProductType) => {
       const localDataIdx = getBookMarkData.findIndex(
         (localData: ProductType) => localData.id === data.id,
@@ -19,6 +19,7 @@ const addBookmarkProperty: Middleware = () => (next) => (action) => {
         : { ...data, bookmark: true };
     });
   }
+
   return next(action);
 };
 

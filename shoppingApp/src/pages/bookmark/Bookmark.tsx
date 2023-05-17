@@ -21,6 +21,7 @@ const Bookmark = () => {
     );
 
   const bookMarkData = data.filter((product: ProductType) => product.bookmark);
+
   return (
     <MainContainer>
       <>

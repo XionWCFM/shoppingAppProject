@@ -1,9 +1,10 @@
 import ProductImage from './ProductImage';
-import { imageWidth } from '../../enums/ImageWH';
 import CardProps from '../../types/CardProps';
+import modalAttributeMatcher from '../../utils/modalAttributeMatcher';
+
+import { imageWidth } from '../../enums/ImageWH';
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../modules/modalSlice';
-import modalAttributeMatcher from '../../utils/modalAttributeMatcher';
 
 const BrandCard = ({ product }: CardProps) => {
   const { brand_name, brand_image_url, follower } = product;

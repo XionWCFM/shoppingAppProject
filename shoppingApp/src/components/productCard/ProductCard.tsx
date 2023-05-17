@@ -1,9 +1,9 @@
 import ProductImage from './ProductImage';
-import { imageWidth } from '../../enums/ImageWH';
 import CardProps from '../../types/CardProps';
-import { useDispatch } from 'react-redux';
 import modalAttributeMatcher from '../../utils/modalAttributeMatcher';
+import { imageWidth } from '../../enums/ImageWH';
 import { openModal } from '../../modules/modalSlice';
+import { useDispatch } from 'react-redux';
 
 const ProductCard = ({ product }: CardProps) => {
   const { title, price, discountPercentage, image_url } = product;

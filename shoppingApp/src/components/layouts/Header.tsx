@@ -1,11 +1,14 @@
+import { RootState } from '../../modules';
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import Hamburger from '../../assets/icons/Hamburger';
 import Logo from '../../assets/icons/Logo';
 import Dropdown from '../dropdown/Dropdown';
 import DarkToggleButton from '../DarkToggleButton';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../modules';
+
 const Header = () => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 

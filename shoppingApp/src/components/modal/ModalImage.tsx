@@ -1,16 +1,18 @@
-import BookMarkStar from '../../assets/icons/BookMarkStar';
 import { starActiveColor, starNonActiveColor } from '../../colors/colors';
-import Delete from '../../assets/icons/Delete';
-import useBookmark from '../../hooks/useBookmark';
-import { showToastAsync } from '../../modules/toastSlice';
-import { useDispatch } from 'react-redux';
-import createToastMessage from '../../utils/createToastMessage';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../modules';
+import { showToastAsync } from '../../modules/thunk/showToastAsync';
 import { closeModal } from '../../modules/modalSlice';
 import { ProductType, useGetProductQuery } from '../../modules/productApi';
+import { RootState } from '../../modules';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Loading from '../loading/Loading';
 import Error from '../loading/Error';
+import Delete from '../../assets/icons/Delete';
+
+import BookMarkStar from '../../assets/icons/BookMarkStar';
+import useBookmark from '../../hooks/useBookmark';
+import createToastMessage from '../../utils/createToastMessage';
+
 const ModalImageWidth = '46.5rem';
 const ModalImageHeight = '30rem';
 

@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface ToastMessageInterface {
   id: number;
@@ -36,15 +36,6 @@ const toastSlice = createSlice({
     },
   },
 });
-
-export const showToastAsync = createAsyncThunk<void, ToastMessageInterface>(
-  'toast/showToastAsync',
-  async (message, { dispatch }) => {
-    dispatch(toastSlice.actions.showToast(message));
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    dispatch(toastSlice.actions.shiftToast());
-  },
-);
 
 export const { showToast, hideToast } = toastSlice.actions;
 export default toastSlice;

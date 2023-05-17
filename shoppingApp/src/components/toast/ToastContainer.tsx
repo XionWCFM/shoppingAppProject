@@ -1,10 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
 import { hideToast } from '../../modules/toastSlice';
 import { RootState } from '../../modules';
-import { createPortal } from 'react-dom';
 import { starActiveColor, starNonActiveColor } from '../../colors/colors';
-import BookMarkStar from '../../assets/icons/BookMarkStar';
+
 import { TiDeleteOutline } from 'react-icons/ti';
+import { createPortal } from 'react-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
+import BookMarkStar from '../../assets/icons/BookMarkStar';
 
 const ToastContainer = () => {
   const messages = useSelector((state: RootState) => state.toast.messages);

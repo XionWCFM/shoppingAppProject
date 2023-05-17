@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
-import { ProductType } from '../../modules/productApi';
 import BrandCard from './BrandCard';
 import CategoryCard from './CategoryCard';
 import ExhibitionCard from './ExhibitonCard';
 import ProductCard from './ProductCard';
+import { ReactElement } from 'react';
+import { ProductType } from '../../modules/productApi';
 import { PascalCaseCardEnums } from '../../enums/card';
 
 const { PRODUCT, CATEGORY, EXHIBITION, BRAND } = PascalCaseCardEnums;

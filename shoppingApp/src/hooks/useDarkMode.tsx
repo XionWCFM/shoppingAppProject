@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../modules/index';
 import { toggleDarkMode } from '../modules/darkSlice';
+
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 export type useDark = [boolean, () => void];
 

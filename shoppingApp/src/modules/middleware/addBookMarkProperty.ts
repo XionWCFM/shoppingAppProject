@@ -1,5 +1,6 @@
-import { Middleware } from '@reduxjs/toolkit';
 import { ProductType } from '../productApi';
+import { Middleware } from '@reduxjs/toolkit';
+
 import getLocalStorage from '../../utils/getLocalStorage';
 
 const addBookmarkProperty: Middleware = () => (next) => (action) => {

@@ -1,10 +1,10 @@
 import BookMarkStar from '../../assets/icons/BookMarkStar';
-import { starNonActiveColor, starActiveColor } from '../../colors/colors';
-import { ProductType } from '../../modules/productApi';
 import useBookmark from '../../hooks/useBookmark';
 import createToastMessage from '../../utils/createToastMessage';
+import { starNonActiveColor, starActiveColor } from '../../colors/colors';
+import { ProductType } from '../../modules/productApi';
+import { showToastAsync } from '../../modules/thunk/showToastAsync';
 import { useDispatch } from 'react-redux';
-import { showToastAsync } from '../../modules/toastSlice';
 
 interface ProductImageProps {
   src?: string | undefined;

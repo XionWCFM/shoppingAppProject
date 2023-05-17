@@ -1,5 +1,5 @@
 import ProductImage from './ProductImage';
-import { imageWidth } from '../../variable/ImageWH';
+import { imageWidth } from '../../enums/ImageWH';
 import CardProps from '../../types/CardProps';
 import { openModal } from '../../modules/modalSlice';
 import { useDispatch } from 'react-redux';

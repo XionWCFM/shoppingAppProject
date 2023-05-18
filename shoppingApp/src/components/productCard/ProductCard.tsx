@@ -1,6 +1,5 @@
 import ProductImage from './ProductImage';
 import CardProps from '../../types/CardProps';
-import modalAttributeMatcher from '../../utils/modalAttributeMatcher';
 import { imageWidth } from '../../enums/ImageWH';
 import { openModal } from '../../modules/modalSlice';
 import { useDispatch } from 'react-redux';
@@ -8,15 +7,11 @@ import { useDispatch } from 'react-redux';
 const ProductCard = ({ product }: CardProps) => {
   const { title, price, discountPercentage, image_url } = product;
   const dispatch = useDispatch();
-  const modalArguments = modalAttributeMatcher(product);
 
   return (
     <figure className={`max-w-[${imageWidth}] flex flex-col`}>
       <ProductImage src={image_url} product={product} />
-      <div
-        className=" cardtext "
-        onClick={() => dispatch(openModal(modalArguments))}
-      >
+      <div className=" cardtext " onClick={() => dispatch(openModal(product))}>
         <div className=" flex items-center justify-between">
           <span className=" flex-shrink-0 overflow-hidden text-ellipsis">
             {title}

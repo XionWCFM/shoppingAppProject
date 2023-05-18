@@ -12,6 +12,7 @@ import Delete from '../../assets/icons/Delete';
 import BookMarkStar from '../../assets/icons/BookMarkStar';
 import useBookmark from '../../hooks/useBookmark';
 import createToastMessage from '../../utils/createToastMessage';
+import modalAttributeMatcher from '../../utils/modalAttributeMatcher';
 
 const ModalImageWidth = '46.5rem';
 const ModalImageHeight = '30rem';
@@ -20,10 +21,11 @@ const ModalImage = () => {
   const { data, isLoading, isError } = useGetProductQuery(undefined);
   const bookMarkHandler = useBookmark();
   const dispatch = useDispatch();
-  const modalState = useSelector((state: RootState) => state.modal);
+  const modalProduct = useSelector((state: RootState) => state.modal.product);
   const findModalIndex = data.findIndex(
-    (product: ProductType) => product.id === modalState.product.id,
+    (product: ProductType) => product.id === modalProduct.id,
   );
+  const modalAttribute = modalAttributeMatcher(modalProduct);
 
   if (isLoading) return <Loading />;
   if (isError || !data) return <Error />;
@@ -39,7 +41,7 @@ const ModalImage = () => {
         </button>
         <img
           className={`rounded-3xl shadow-md shadow-slate-400 h-[${ModalImageHeight}] w-[${ModalImageWidth}]`}
-          src={modalState.src}
+          src={modalAttribute.src}
           width={ModalImageWidth}
           height={ModalImageHeight}
         />
@@ -65,7 +67,7 @@ const ModalImage = () => {
               />
             </button>
             <span className=" px-2 text-xl font-bold text-white">
-              {modalState.title}
+              {modalAttribute.title}
             </span>
           </div>
         </div>

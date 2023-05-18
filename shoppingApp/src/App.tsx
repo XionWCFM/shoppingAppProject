@@ -7,13 +7,20 @@ import Footer from './components/layouts/Footer';
 import Products from './pages/products/Products';
 import ToastContainer from './components/toast/ToastContainer';
 import Modal from './components/modal/Modal';
+import BackDrop from './components/modal/BackDrop';
+import ModalImage from './components/modal/ModalImage';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
       <ToastContainer />
-      <Modal />
+      <Modal>
+        <>
+          <BackDrop />
+          <ModalImage />
+        </>
+      </Modal>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/bookmark" element={<Bookmark />} />
